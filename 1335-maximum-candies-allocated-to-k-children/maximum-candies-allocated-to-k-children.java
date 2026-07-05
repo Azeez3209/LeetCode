@@ -10,8 +10,15 @@ class Solution {
         return false;
     }
     public int maximumCandies(int[] candies, long k) {
+        long val = 0;
         int l = 1;
         int r = (int)Math.pow(10,7);
+        for(int i=0;i<candies.length;i++){
+            val += candies[i];
+            }
+            if(val < k){
+                return 0;
+            }
         while(l <= r){
             int mid = l + (r - l)/2;
             if(isPossible(candies,k,mid)){
